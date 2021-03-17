@@ -1,0 +1,1 @@
+﻿INSERT INTO Login (Username, Password) VALUES ("charlotte", "hejsan");

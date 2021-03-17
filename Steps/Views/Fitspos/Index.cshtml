@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Steps.Models.Fitspo>
+
+@{
+    ViewData["Title"] = "Controlpanel";
+}
+
+<div class="mainContainer">
+    <h1>Controlpanel</h1>
+    <p>
+        <a class="btn2" asp-action="Logout">Log out</a>
+        <a class="btn" asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateOfPost)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateOfPost)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td class="buttonsTd">
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a><span class="verticalLine"> |</span>
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a><span class="verticalLine"> |</span>
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Steps.Models.Fitspo>
+
+@{
+    ViewData["Title"] = "Fitspo Articles";
+}
+
+<div class="mainContainer">
+    <h1>Fitspo</h1>
+    <section id="topBar">
+        <h4>What is Fitspo?</h4>
+        <p>Fitspo is what we call fitness inspiration. These are articles helping you to live a life full of fitness, and we hope that you enjoy reading them as much as we enjoy sharing them.</p>
+        <p>Fitness for all!</p>
+    </section>
+    <section id="articleSection">
+        @foreach (var article in Model)
+        {
+        <article class="fitspoArt">
+            <a asp-action="Single" asp-route-id="@article.Id">
+                <div class="articleDivHeight">
+                    @{
+                        if (article.Image != null)
+                        {
+                            var image = Controllers.FitsposController.GetImageFromByteArray(article.Image);
+                            <img src="@image" alt="A picture for the blog" class="imgBig" />
+                        }
+                    }
+                    <h2>@article.Title</h2>
+                    <p>@article.Blurb</p>
+                    <p class="more">Keep reading &rsaquo;&rsaquo;</p>
+                </div>
+            </a>
+        </article>
+        }
+    </section>
+</div>

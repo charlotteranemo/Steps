@@ -1,0 +1,24 @@
+﻿@model Steps.Models.Login
+@{
+    ViewData["Title"] = "For Employees";
+}
+
+<div class="mainContainer">
+    <h1>Login</h1>
+    <form method="POST" asp-controller="Home" asp-action="Employees">
+        @Html.AntiForgeryToken()
+        <div class="formGroup">
+            <label asp-for="Username" class="label"></label>
+            <input asp-for="Username" class="inputBox" />
+            <span asp-validation-for="Username" class="text-danger"></span>
+        </div>
+        <div class="formGroup">
+            <label asp-for="Password" class="label"></label>
+            <input asp-for="Password" class="inputBox" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div class="formGroup">
+            <input type="submit" value="Login" class="btn" />
+        </div>
+    </form>
+</div>

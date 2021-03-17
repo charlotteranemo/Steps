@@ -1,0 +1,76 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div id="frontPicDiv">
+    <img src="~/pictures/dumbbell.jpg" alt="Dumbbells" id="frontPic">
+    <div id="frontPicText">
+        <h1 id="year">2021.</h1>
+        <h1>This is your year. <br />Your time. Your turn. <br />What's your goal?</h1>
+    </div>
+</div>
+<div id="frontDivFlex">
+    <div id="highlightsDiv">
+        <h2 class="frontH2">Highlights</h2>
+        <div id="highlights">
+            <div id="mainHighlight">
+                <img src="pictures/workoutMusic.jpg" alt="Woman holding an iPhone" id="mainHighlightPic">
+                <a href="http://steps.ranemo.se/fitspo/single?id=2">
+                    <div id="mainHighlightText">
+                        <h3>Bored of your old playlist?</h3>
+                        <p>Find some new motivation to exercise with these songs!</p>
+                    </div>
+                </a>
+            </div>
+            <div id="sideHighlights">
+                <div class="highlight" id="hl1">
+                    <img src="pictures/superfoods.jpg" alt="Vegetables and fruit" class="highlightPic">
+                    <a href="http://steps.ranemo.se/fitspo/single?id=1">
+                        <div class="highlightText">
+                            <h3>Go green!</h3>
+                            <p>Why eating greens doesn't have to be a bore.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="highlight">
+                    <img src="pictures/breakfast.jpg" alt="A bowl of muesli" class="highlightPic">
+                    <a href="http://steps.ranemo.se/fitspo/single?id=3">
+                        <div class="highlightText">
+                            <h3>Break the fast</h3>
+                            <p>Healthy breakfasts that even you will take time for!</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="ourGyms">
+    <h2>Our Gyms</h2>
+    <div id="gymsFlex">
+        <div class="gym">
+            <a asp-controller="Gym" asp-action="Stockholm">
+                <img src="pictures/dumbbells.jpg" alt="Dumbbells" class="gymPic">
+                <div class="gymText">
+                    <h3>Stockholm</h3>
+                </div>
+            </a>
+        </div>
+        <div class="gym">
+            <a asp-controller="Gym" asp-action="London">
+                <img src="pictures/crossfit.jpg" alt="A woman exercising" class="gymPic">
+                <div class="gymText">
+                    <h3>London</h3>
+                </div>
+            </a>
+        </div>
+        <div class="gym">
+            <a asp-controller="Gym" asp-action="Oslo">
+                <img src="pictures/bigDumbbell.jpg" alt="A dumbbell" class="gymPic">
+                <div class="gymText">
+                    <h3>Oslo</h3>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

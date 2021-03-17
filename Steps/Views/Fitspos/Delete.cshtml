@@ -1,0 +1,55 @@
+﻿@model Steps.Models.Fitspo
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="mainContainer">
+    <h1>Delete Fitspo Article</h1>
+    <div class="delTable">
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.DateOfPost)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DateOfPost)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Blurb)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Blurb)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Post)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Post)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Image)
+            </dt>
+            <dd class="col-sm-10">
+                @{
+                    if (Model.Image != null)
+                    {
+                        var image = Controllers.FitsposController.GetImageFromByteArray(Model.Image);
+                        <img src="@image" alt="A picture for the blog" class="imgSmall" />
+                    }
+                }
+            </dd>
+        </dl>
+
+        <form id="delForm" asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Delete" class="btn btn-danger deleteViewBtn" />
+            <a class="btn2 deleteViewBtn" asp-action="Index">Back to List</a>
+        </form>
+    </div>
+</div>

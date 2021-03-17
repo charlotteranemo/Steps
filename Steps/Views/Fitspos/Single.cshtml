@@ -1,0 +1,20 @@
+﻿@model Steps.Models.Fitspo
+
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<div class="mainContainer">
+    <article id="singleArticle">
+        <h1>@Model.Title</h1>
+        @{
+            if (Model.Image != null)
+            {
+                var image = Controllers.FitsposController.GetImageFromByteArray(Model.Image);
+                <img src="@image" alt="A picture for the blog" class="imgBiggest" />
+            }
+        }
+        <h2>Published on @Model.DateOfPost</h2>
+        <p>@Html.Raw(Model.Post)</p>
+    </article>
+</div>

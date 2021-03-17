@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] | Steps</title>
+    <link rel="stylesheet" href="~/css/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda&family=Montserrat&family=Poppins&family=Quicksand&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5f3720eb53.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <script src="~/ckeditor/ckeditor.js"></script>
+</head>
+<body>
+    <header>
+        <a asp-controller="Home" asp-action="Index"><img src="~/pictures/stepsLogotype.png" alt="Logotype" id="mainLogo"></a>
+        <nav id="mainNav">
+            <h2 id="menuHeader">Menu</h2>
+            <div id="div1">
+                <span id="navBtn1">Our Gyms <i class="fas fa-caret-down"></i></span>
+                <div id="nav1">
+                    <div id="locations">
+                        <h3>Locations</h3>
+                        <a asp-controller="Home" asp-action="Index" id="homeLink">Home</a>
+                        <a asp-controller="Gym" asp-action="Stockholm">Stockholm</a>
+                        <a asp-controller="Gym" asp-action="London">London</a>
+                        <a asp-controller="Gym" asp-action="Oslo">Oslo</a>
+                    </div>
+                    <div id="about">
+                        <h3>About</h3>
+                        <a asp-controller="Gym" asp-action="Prices">Prices</a>
+                        <a asp-controller="Gym" asp-action="Index">Our goal</a>
+                    </div>
+                </div>
+            </div>
+            <div id="div2">
+                <a asp-controller="Fitspos" asp-action="Articles" id="navBtn2">Fitspo</a>
+            </div>
+        </nav>
+        <div id="menu-btn">
+            <div class="menu-btn"></div>
+        </div>
+        <nav id="socialLinks">
+            <a href="https://facebook.com" id="faceb" class="socialLink"><i class="fab fa-facebook-square"></i> Facebook</a>
+            <a href="https://instagram.com" id="instag" class="socialLink"><i class="fab fa-instagram-square"></i> Instagram</a>
+        </nav>
+        <div id="searchBar">
+            <form method="POST" asp-controller="Home" asp-action="Search">
+                <label for="search" id="searchLabel">Search: </label>
+                <input type="text" name="search" id="search" placeholder="Search">
+                <input type="submit" id="searchBtn" value="">
+            </form>
+        </div>
+    </header>
+    <div class="main">
+        @RenderBody()
+    </div>
+    <footer>
+        <div id="topFooter">
+            <h3>We're there for you every step of the way!</h3>
+            <p>Gyms in 3 cities &diamondsuit; Affordable prices &diamondsuit; Inspiration and tips</p>
+        </div>
+        <div id="announce">
+            <h4><a asp-action="Index" asp-controller="Gym"><span id="cov">COVID19</span> - See what we do to keep you safe during the pandemic &rsaquo;&rsaquo;</a></h4>
+        </div>
+        <div id="footer">
+            <div id="newsletter">
+                <h3>Do you want news, fitspo and offers straight to your inbox?</h3>
+                <form id="emailForm" asp-controller="Home" asp-action="Email">
+                    <label for="email">Enter your e-mail below and we'll add you to our list!</label><br />
+                    <input type="email" placeholder="E-mail" id="email" name="email">
+                    <input type="submit" value="Send" class="submitBtn">
+                </form>
+            </div>
+            <div id="contact">
+                <h3>Customer Service</h3>
+                <p>Phone: 08 - 123 45 67 <br />(open weekdays 8-15)</p>
+                <p>Email: <a href="mailto:info@stepsgym.com">info@stepsgym.com</a> <br />(we'll try to respond within 3 working days).</p>
+            </div>
+            <div id="footerLinks">
+                <a asp-controller="Home" asp-action="Policy">Privacy Policy &#10148;</a>
+                <a asp-controller="Home" asp-action="About">About Steps &#10148;</a>
+                <a asp-controller="Home" asp-action="Employees">For Employees &#10148;</a>
+                <div id="socialNav">
+                    <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
+                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    @RenderSection("scripts", false)
+    <script type="text/javascript" src="~/js/Main.js"></script>
+</body>
+</html>

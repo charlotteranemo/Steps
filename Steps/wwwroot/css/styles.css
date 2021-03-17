@@ -876,7 +876,7 @@ td {
 .fitspoArt {
     width: 22%;
     margin: 1.5%;
-    height: 330px;
+    min-height: 350px;
 }
 
 .articleDivHeight {
@@ -1064,10 +1064,15 @@ form#emailForm {
 
 /*---Media queries---*/
 
+@media (min-width: 1600px) {
+    .fitspoArt {
+        min-height: 400px;
+    }
+}
+
 @media (max-width: 1400px) {
     #frontPicText {
         height: 60%;
-        
     }
 }
 

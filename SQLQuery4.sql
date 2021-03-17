@@ -1,1 +1,0 @@
-﻿INSERT INTO Login (Username, Password, IsLogged) VALUES ("charlotte", "hejsan", false);
